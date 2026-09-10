@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Paleta blanco + grafito, acento fucsia del logo (modo claro, por defecto). */
+:root {
+  --background: #ffffff;
+  --superficie: #f4f5f7;
+  --borde: #e3e5ea;
+  --foreground: #16171b;
+  --tenue: #6b7178;
+  --acento: #d0057b;
+  --acento-fuerte: #a80463;
+}
+
+/* Modo oscuro: negro + fucsia brillante. */
+:root[data-theme="dark"] {
+  --background: #0b0b0d;
+  --superficie: #16171a;
+  --borde: #2a2b30;
+  --foreground: #f4f5f7;
+  --tenue: #9aa0a8;
+  --acento: #ec2a93;
+  --acento-fuerte: #f465b3;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-superficie: var(--superficie);
+  --color-borde: var(--borde);
+  --color-foreground: var(--foreground);
+  --color-tenue: var(--tenue);
+  --color-acento: var(--acento);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tema claro fijo; no seguimos el tema del sistema. */
+html {
+  color-scheme: light;
+}
+
+.titulo-display {
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}

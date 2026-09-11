@@ -74,8 +74,8 @@ export default function Home() {
             priority
             className="object-cover object-top"
           />
-          <div className="absolute -right-10 top-1/4 h-40 w-40 rounded-full bg-acento/15 blur-[90px]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background/90" />
+          <div className="absolute inset-0 bg-acento/10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/30 to-background/70" />
         </div>
 
         {/* Desktop: panel a la derecha, foto rellenando todo el panel */}
@@ -87,7 +87,7 @@ export default function Home() {
             priority
             className="object-cover object-top"
           />
-          <div className="absolute -right-24 top-1/4 h-[750px] w-[750px] rounded-full bg-acento/20 blur-[160px]" />
+          <div className="absolute inset-0 bg-acento/12" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/60 to-transparent" />
         </div>
 
@@ -220,7 +220,8 @@ export default function Home() {
           className="hidden object-cover opacity-90 lg:block"
         />
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-gradient-to-t from-black/70 via-black/35 to-black/25">
-          <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-acento/20 blur-[140px]" />
+          <div className="absolute inset-0 bg-acento/12 lg:hidden" />
+          <div className="hidden h-[600px] w-[600px] rounded-full bg-acento/20 blur-[140px] lg:absolute lg:left-1/2 lg:top-1/2 lg:block lg:-translate-x-1/2 lg:-translate-y-1/2" />
         </div>
 
         <div className="relative z-20 mx-auto max-w-3xl text-center space-y-6">

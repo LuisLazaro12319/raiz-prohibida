@@ -34,6 +34,10 @@ export type Producto = {
   /** Si true, hay una foto real en /public/prod/<slug>.jpg. Si no, se usa la
    *  silueta de PrendaPlaceholder. */
   foto?: boolean;
+  /** Nombres de archivo extra en /public/prod/ (ej. el mismo modelo en otro
+   *  color). Se muestran como miniaturas en la ficha, independientes del
+   *  selector de Color — no cambian solas al elegir un color. */
+  fotosExtra?: string[];
 };
 
 export type ItemCarrito = {

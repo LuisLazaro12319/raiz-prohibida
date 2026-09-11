@@ -24,8 +24,13 @@ export function FichaProducto({ producto }: { producto: Producto }) {
   const unitario = precioDe(producto);
   const faltaElegirTalle = talle === null;
 
-  // Foto grande: siempre la principal del producto (no cambia al elegir color).
-  const fotoPrincipal = producto.foto ? `${BASE_PATH}/prod/${producto.slug}.jpg` : null;
+  // Galería de fotos del producto (no depende del selector de Color — elegir
+  // un color solo define qué se agrega al pedido, no cambia la foto sola).
+  const imagenes = producto.foto
+    ? [`${producto.slug}.jpg`, ...(producto.fotosExtra ?? [])]
+    : [];
+  const [fotoActual, setFotoActual] = useState(0);
+  const fotoPrincipal = imagenes.length > 0 ? `${BASE_PATH}/prod/${imagenes[fotoActual]}` : null;
 
   function handleAgregar() {
     if (!talle || producto.sinStock) return;
@@ -58,6 +63,31 @@ export function FichaProducto({ producto }: { producto: Producto }) {
             )}
           </div>
         </div>
+
+        {imagenes.length > 1 && (
+          <div className="mt-3 flex gap-3">
+            {imagenes.map((img, i) => (
+              <button
+                key={img}
+                type="button"
+                onClick={() => setFotoActual(i)}
+                aria-label={`Ver foto ${i + 1}`}
+                aria-pressed={fotoActual === i}
+                className={`h-20 w-16 overflow-hidden rounded-lg border-2 transition-colors ${
+                  fotoActual === i ? "border-acento" : "border-borde hover:border-tenue"
+                }`}
+              >
+                <Image
+                  src={`${BASE_PATH}/prod/${img}`}
+                  alt={`${producto.nombre} — foto ${i + 1}`}
+                  width={128}
+                  height={160}
+                  className="h-full w-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div>

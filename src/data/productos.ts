@@ -29,6 +29,7 @@ export const productos: Producto[] = [
     colores: [ROSA, NEGRO],
     destacado: true,
     foto: true,
+    fotosExtra: ["set-girly-negro.jpg"],
   },
   {
     slug: "set-celine",
@@ -55,6 +56,7 @@ export const productos: Producto[] = [
     colores: [ROJO, NEGRO],
     destacado: true,
     foto: true,
+    fotosExtra: ["set-misterio-negro.jpg"],
   },
   {
     slug: "set-jessica-rabbit",

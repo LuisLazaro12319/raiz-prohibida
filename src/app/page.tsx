@@ -74,6 +74,7 @@ export default function Home() {
             priority
             className="object-cover object-top"
           />
+          <div className="absolute -right-16 top-1/4 h-[380px] w-[380px] rounded-full bg-acento/20 blur-[110px]" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background/90" />
         </div>
 
@@ -86,6 +87,7 @@ export default function Home() {
             priority
             className="object-cover object-top"
           />
+          <div className="absolute -right-24 top-1/3 h-[500px] w-[500px] rounded-full bg-acento/20 blur-[140px]" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/60 to-transparent" />
         </div>
 

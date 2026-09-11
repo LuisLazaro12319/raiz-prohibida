@@ -110,7 +110,7 @@ export default function Home() {
                 <span className="text-acento">Y PODEROSA</span>
               </h1>
 
-              <p className="max-w-xl text-tenue text-sm sm:text-base leading-relaxed">
+              <p className="max-w-xl text-zinc-700 dark:text-zinc-200 lg:text-tenue text-sm sm:text-base leading-relaxed">
                 Sets pensados para que te sientas segura y auténtica. Elegí tu talle, armá tu pedido y lo cerramos por WhatsApp — con envíos a todo el país.
               </p>
 
@@ -120,12 +120,6 @@ export default function Home() {
                   className="inline-flex h-12 items-center justify-center rounded-none bg-acento px-6 text-sm font-bold uppercase tracking-wider text-white transition-transform hover:scale-[1.02] active:scale-95"
                 >
                   VER CATÁLOGO →
-                </Link>
-                <Link
-                  href="/productos?ver=mayorista"
-                  className="inline-flex h-12 items-center justify-center rounded-none border border-borde bg-superficie px-6 text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:bg-superficie/80"
-                >
-                  PRECIOS MAYORISTAS
                 </Link>
               </div>
 

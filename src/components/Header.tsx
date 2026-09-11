@@ -38,6 +38,10 @@ export function Header() {
             priority
             className="hidden h-12 w-auto object-contain sm:h-14 dark:block"
           />
+          <span className="whitespace-nowrap text-sm font-extrabold uppercase leading-none tracking-tight sm:text-lg">
+            <span className="text-foreground">Raíz</span>{" "}
+            <span className="text-acento">Prohibida</span>
+          </span>
         </Link>
 
         <nav className="ml-4 hidden gap-6 text-sm md:flex">

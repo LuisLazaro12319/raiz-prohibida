@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { productos } from "@/data/productos";
 import { ProductoCard } from "@/components/ProductoCard";
 import { ComoComprar } from "@/components/ComoComprar";
 import { Separador } from "@/components/Separador";
 import { SeccionConFondo } from "@/components/SeccionConFondo";
 import { PromosCarrusel } from "@/components/PromosCarrusel";
-import { FONDOS, MINIMO_MAYORISTA } from "@/lib/config";
+import { BASE_PATH, FONDOS, MINIMO_MAYORISTA } from "@/lib/config";
 
 const BENEFICIOS = [
   {
@@ -64,10 +65,32 @@ export default function Home() {
 
       {/* HERO PRINCIPAL */}
       <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] bg-background text-foreground overflow-hidden flex items-center">
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute -right-32 top-1/3 h-[560px] w-[560px] -translate-y-1/2 rounded-full bg-acento/25 blur-[130px]" />
-          <div className="absolute -left-24 bottom-0 h-[380px] w-[380px] rounded-full bg-acento/10 blur-[110px]" />
+        {/* Mobile: foto de fondo completa, atenuada */}
+        <div className="absolute inset-0 lg:hidden pointer-events-none z-0">
+          <Image
+            src={`${BASE_PATH}/fondo-hero.jpg`}
+            alt="Conjunto de Raíz Prohibida"
+            fill
+            priority
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background/90" />
         </div>
+
+        {/* Desktop: panel a la derecha, foto rellenando todo el panel */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 xl:w-[45%] pointer-events-none z-0 overflow-hidden">
+          <Image
+            src={`${BASE_PATH}/fondo-hero.jpg`}
+            alt="Conjunto de Raíz Prohibida"
+            fill
+            priority
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/60 to-transparent" />
+        </div>
+
+        <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
 
         <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

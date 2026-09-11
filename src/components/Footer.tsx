@@ -66,7 +66,14 @@ export function Footer() {
               alt=""
               width={80}
               height={80}
-              className="h-10 w-10 rounded-full object-cover"
+              className="h-10 w-10 rounded-full object-cover dark:hidden"
+            />
+            <Image
+              src={`${BASE_PATH}/logo-dark.png`}
+              alt=""
+              width={80}
+              height={80}
+              className="hidden h-10 w-10 rounded-full object-cover dark:block"
             />
             <span className="titulo-display text-xl font-extrabold italic tracking-tighter">
               {MARCA.nombre}

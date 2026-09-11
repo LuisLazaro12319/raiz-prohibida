@@ -28,7 +28,15 @@ export function Header() {
             width={315}
             height={254}
             priority
-            className="h-12 w-auto object-contain sm:h-14"
+            className="h-12 w-auto object-contain sm:h-14 dark:hidden"
+          />
+          <Image
+            src={`${BASE_PATH}/logo-dark.png`}
+            alt={MARCA.nombre}
+            width={315}
+            height={254}
+            priority
+            className="hidden h-12 w-auto object-contain sm:h-14 dark:block"
           />
         </Link>
 
